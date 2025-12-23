@@ -33,7 +33,7 @@ with DAG(
 
         in_cluster=True,
         get_logs=True,
-        is_delete_operator_pod=True,
+        is_delete_operator_pod=False,
         do_xcom_push=False,
 
         cmds=["/bin/sh", "-c"],
