@@ -1,10 +1,7 @@
 from datetime import timedelta
 import os
 from airflow import DAG
-from airflow.providers.cncf.kubernetes.operators.spark_kubernetes import SparkKubernetesOperator
 from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
-from airflow.utils.dates import days_ago
-from airflow.models import Variable
 import time
 
 default_args = {
@@ -15,7 +12,6 @@ default_args = {
 
 dag = DAG(
     'dbt_airflow',
-    start_date=days_ago(1),
     catchup=False,
     schedule_interval=timedelta(days=1),
     template_searchpath='/opt/airflow/dags/repo/dags/dbt/'
