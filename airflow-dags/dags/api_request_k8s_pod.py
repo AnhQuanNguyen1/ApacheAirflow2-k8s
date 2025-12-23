@@ -29,7 +29,7 @@ with DAG(
         service_account_name="api-request", 
 
         # Nếu image PRIVATE thì bỏ comment và dùng đúng secret name (vd: regcred)
-        # image_pull_secrets=[k8s.V1LocalObjectReference("regcred")],
+        image_pull_secrets=[k8s.V1LocalObjectReference("regcred")],
 
         in_cluster=True,
         get_logs=True,
