@@ -14,7 +14,7 @@ default_args = {
 with DAG(
     dag_id="weather-api-orchestrator",
     default_args=default_args,
-    schedule=timedelta(minutes=5),
+    schedule=timedelta(minutes=15),
     catchup=False,
     max_active_runs=1,
     tags=["k8s", "api-request"],
