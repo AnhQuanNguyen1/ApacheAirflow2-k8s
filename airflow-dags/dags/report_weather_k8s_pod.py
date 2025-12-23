@@ -36,7 +36,8 @@ dbt_task = KubernetesPodOperator(
     in_cluster=True,
     get_logs=True,
     dag=dag,
-    is_delete_operator_pod=False
+    is_delete_operator_pod=False,
+    on_finish_action='keep_pod'
 )
 
 dbt_task

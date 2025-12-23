@@ -34,6 +34,7 @@ with DAG(
         in_cluster=True,
         get_logs=True,
         is_delete_operator_pod=False,
+        on_finish_action='keep_pod',
         do_xcom_push=False,
 
         cmds=["/bin/sh", "-c"],
