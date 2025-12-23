@@ -13,7 +13,7 @@ default_args = {
 dag = DAG(
     'dbt_airflow',
     catchup=False,
-    schedule_interval=timedelta(days=1),
+    schedule=timedelta(days=1),
     template_searchpath='/opt/airflow/dags/repo/dags/dbt/'
 )
 
