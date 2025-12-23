@@ -24,6 +24,7 @@ dbt_task = KubernetesPodOperator(
     image='naq113469/dbt:latest', 
     image_pull_policy='Always',
     service_account_name="dbt", 
+    image_pull_secrets=[k8s.V1LocalObjectReference("regcred")],
     cmds=["dbt"],
     arguments=[
         "run",
