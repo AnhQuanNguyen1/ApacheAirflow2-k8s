@@ -37,6 +37,7 @@ dbt_task = KubernetesPodOperator(
         "--select", "mart.daily_weather",
         "--select", "mart.weather_report",
     ],
+    in_cluster=True,
     get_logs=True,
     dag=dag,
     is_delete_operator_pod=False
