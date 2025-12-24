@@ -29,7 +29,6 @@ dbt_task = KubernetesPodOperator(
     cmds=["dbt"],
     arguments=[
         "run",
-        "--profiles-dir", "/dbt/profiles",
         "--fail-fast",
         "--select", "staging.stg_weather_data",
         "--select", "mart.daily_weather",
