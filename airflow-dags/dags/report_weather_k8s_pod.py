@@ -3,6 +3,7 @@ import os
 from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
 import time
+from kubernetes.client import models as k8s
 
 default_args = {
     'owner': 'quanna8',
